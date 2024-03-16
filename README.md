@@ -1,2 +1,2 @@
 # Today I Learned
-## Notes About what i learned 
+## Notes About what i learned

@@ -22,15 +22,15 @@ So the only way to remember the states of the application is either by using ses
     - In Database (MongoDB, PostgreSQL)
 3. Server put the sessionID in cookies header and stores in the client's browser.
     -   ```http
-            HTTP/2.0 200 OK
-            Content-type: text/html
-            Set-Cookie: sid=2moo8l4j4k1j3n4ko32v03mj054gv7rjh9bvd; Domain=example.com; Path=/; Expires=Wed, 13 Feb 2024 22:23:01 GMT;
+        HTTP/2.0 200 OK
+        Content-type: text/html
+        Set-Cookie: sid=2moo8l4j4k1j3n4ko32v03mj054gv7rjh9bvd; Domain=example.com; Path=/; Expires=Wed, 13 Feb 2024 22:23:01 GMT;
         ```
 4. Client (browser) includes that cookies in every subsequent request. 
     -   ```http
-            GET /sample_page.html HTTP/2.0
-            Host: www.example.org
-            Cookie: sid=2moo8l4j4k1j3n4ko32v03mj054gv7rjh9bvd
+        GET /sample_page.html HTTP/2.0
+        Host: www.example.org
+        Cookie: sid=2moo8l4j4k1j3n4ko32v03mj054gv7rjh9bvd
         ```
 5. when the server receives a request, extract the sessionID and Look in the Database of sessions.
 
